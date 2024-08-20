@@ -1,0 +1,83 @@
+<div
+  id="chart"
+  class="bg-white rounded-lg p-4 mb-3 shadow-lg shadow-slate-400/20"
+  [ngClass]="{ 'grid grid-cols-2': type() == 'horizontal' }"
+>
+  <div>
+    <div
+      class="mb-7"
+      [ngClass]="{
+        'flex justify-between': type() == 'vertical'
+      }"
+    >
+      <div class="flex">
+        <div class="{{ crypto().color }} p-3 flex rounded-lg">
+          <ng-icon
+            size="25"
+            [name]="crypto().icon"
+            class="text-white m-auto"
+          ></ng-icon>
+        </div>
+        <div class="ml-3">
+          <h6 class="text-slate-600 text-xl">{{ crypto().name }}</h6>
+          <p class="text-slate-500 font-light">{{ crypto().code }}</p>
+        </div>
+      </div>
+      @if(type() == 'vertical'){
+      <button
+        class="w-10 h-10 border text-slate-400 bg-white flex rounded-full hover:bg-slate-100 active:bg-slate-200"
+      >
+        <ng-icon
+          size="20"
+          class="m-auto"
+          [name]="
+            graph().type == 'up'
+              ? 'heroArrowTrendingUpSolid'
+              : 'heroArrowTrendingDownSolid'
+          "
+        ></ng-icon>
+      </button>
+      }
+    </div>
+    <div>
+      <h2 class="text-slate-600 text-3xl mb-3">
+        {{ graph().value | currency : "$" : "symbol" : "1.0-0" }}
+      </h2>
+      <div
+        class="flex items-center w-fit py-1 px-2 rounded"
+        [class]="graph().type == 'up' ? 'bg-green-100' : 'bg-red-100'"
+      >
+        <ng-icon
+          size="20"
+          class="mr-1.5"
+          [name]="
+            graph().type == 'up'
+              ? 'heroArrowTrendingUpSolid'
+              : 'heroArrowTrendingDownSolid'
+          "
+          [class]="graph().type == 'up' ? 'text-green-500' : 'text-red-500'"
+        ></ng-icon>
+        <span
+          class="text-sm"
+          [class]="graph().type == 'up' ? 'text-green-500' : 'text-red-500'"
+        >
+          {{ graph().type == "up" ? "+" : "-" }}{{ graph().percent }}%
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <apx-chart
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [yaxis]="chartOptions.yaxis"
+    [xaxis]="chartOptions.xaxis"
+    [stroke]="chartOptions.stroke"
+    [tooltip]="chartOptions.tooltip"
+    [dataLabels]="chartOptions.dataLabels"
+    [legend]="chartOptions.legend"
+    [grid]="chartOptions.grid"
+    [fill]="chartOptions.fill"
+    [colors]="[graph().type == 'up' ? '#21cc6d' : '#d52e31']"
+  ></apx-chart>
+</div>

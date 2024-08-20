@@ -1,0 +1,99 @@
+<div class="bg-white rounded-lg shadow-lg shadow-slate-400/20 pb-4">
+  <div class="p-4">
+    <div class="flex mb-7">
+      <div class="bg-customOrange p-3 flex rounded-lg">
+        <ng-icon
+          size="25"
+          name="simpleBitcoinsv"
+          class="text-white m-auto"
+        ></ng-icon>
+      </div>
+      <div class="ml-3">
+        <h6 class="text-slate-600 text-xl">Bitcoin</h6>
+        <p class="text-slate-500 font-light">BTC</p>
+      </div>
+    </div>
+    <div>
+      <h2 class="text-slate-600 text-3xl mb-3">
+        {{ 118326.76 | currency : "$" }}
+      </h2>
+      <div class="flex items-center">
+        <div
+          class="flex items-center w-fit py-1 px-2 rounded"
+          [class]="'bg-green-100'"
+        >
+          <ng-icon
+            size="20"
+            name="heroArrowTrendingUpSolid"
+            class="text-green-500 mr-1.5"
+          ></ng-icon>
+          <span class="text-sm" class="text-green-500">
+            {{ 56841.88 | currency : "$" }} (+2.7%)
+          </span>
+        </div>
+        <span class="text-slate-400 block ml-3"> Past 24 hours</span>
+      </div>
+    </div>
+  </div>
+  <apx-chart
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [xaxis]="chartOptions.xaxis"
+    [yaxis]="chartOptions.yaxis"
+    [dataLabels]="chartOptions.dataLabels"
+    [grid]="chartOptions.grid"
+    [stroke]="chartOptions.stroke"
+    [tooltip]="chartOptions.tooltip"
+  ></apx-chart>
+  <div class="grid grid-cols-7">
+    <a
+      href="javascript:void(0)"
+      class="text-slate-600 mx-auto"
+      (click)="onChangeChart('1D')"
+      [class]="active() == '1D' ? 'font-medium' : 'font-light'"
+      >1D</a
+    >
+    <a
+      href="javascript:void(0)"
+      class="text-slate-600 mx-auto"
+      (click)="onChangeChart('1W')"
+      [class]="active() == '1W' ? 'font-medium' : 'font-light'"
+      >1W</a
+    >
+    <a
+      href="javascript:void(0)"
+      class="text-slate-600 mx-auto"
+      (click)="onChangeChart('1M')"
+      [class]="active() == '1M' ? 'font-medium' : 'font-light'"
+      >1M</a
+    >
+    <a
+      href="javascript:void(0)"
+      class="text-slate-600 mx-auto"
+      (click)="onChangeChart('3M')"
+      [class]="active() == '3M' ? 'font-medium' : 'font-light'"
+      >3M</a
+    >
+    <a
+      href="javascript:void(0)"
+      class="text-slate-600 mx-auto"
+      (click)="onChangeChart('YTD')"
+      [class]="active() == 'YTD' ? 'font-medium' : 'font-light'"
+      >YTD</a
+    >
+    <a
+      href="javascript:void(0)"
+      class="text-slate-600 mx-auto"
+      (click)="onChangeChart('1Y')"
+      [class]="active() == '1Y' ? 'font-medium' : 'font-light'"
+      >1Y</a
+    >
+    <a
+      href="javascript:void(0)"
+      class="text-slate-600 mx-auto"
+      (click)="onChangeChart('All')"
+      [class]="active() == 'All' ? 'font-medium' : 'font-light'"
+      >All</a
+    >
+  </div>
+</div>

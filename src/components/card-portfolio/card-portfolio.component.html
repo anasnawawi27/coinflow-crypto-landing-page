@@ -1,0 +1,45 @@
+<div class="bg-white rounded-lg p-4 shadow-lg shadow-slate-400/20">
+  <div class="mb-2 flex justify-between items-center">
+    <h6 class="text-slate-600 text-xl">My Portfolio</h6>
+    <button
+      class="w-10 h-10 text-slate-400 bg-white flex rounded-full hover:bg-slate-100 active:bg-slate-200"
+    >
+      <ng-icon
+        size="20"
+        class="m-auto"
+        name="heroEllipsisVerticalSolid"
+      ></ng-icon>
+    </button>
+  </div>
+  <ul class="divide-y divide-slate-200 mb-2">
+    @for (item of list; track $index) {
+    <li class="flex justify-between items-center py-3 first:pt-0 last:pb-0">
+      <div class="flex items-center">
+        <div class="w-10 h-10 bg-{{ item.color }} flex rounded-lg mr-3">
+          <ng-icon
+            class="text-white m-auto"
+            size="20"
+            [name]="item.icon"
+          ></ng-icon>
+        </div>
+        <div>
+          <p class="text-sm text-slate-600">
+            {{ item.name }} - {{ item.code }}
+          </p>
+          <small class="font-light text-slate-500">{{ item.value }}</small>
+        </div>
+      </div>
+      <div class="text-right">
+        <small
+          [class]="item.graph.type == 'up' ? 'text-green-500' : 'text-red-500'"
+          >{{ item.graph.type == "up" ? "+" : "-"
+          }}{{ item.graph.percent }}%</small
+        >
+        <p class="text-sm text-slate-600">
+          {{ item.total | currency : "$ " }}
+        </p>
+      </div>
+    </li>
+    }
+  </ul>
+</div>

@@ -1,0 +1,92 @@
+<div class="border border-slate-200 rounded-xl mb-20">
+  <table class="w-full">
+    <thead>
+      <tr>
+        <th></th>
+        <th class="text-left pt-5 pb-3 text-sm font-normal text-slate-500">
+          Coin Name
+        </th>
+        <th class="text-left pt-5 pb-3 text-sm font-normal text-slate-500">
+          Price
+        </th>
+        <th class="text-left pt-5 pb-3 text-sm font-normal text-slate-500">
+          24H Change
+        </th>
+        <th class="text-left pt-5 pb-3 text-sm font-normal text-slate-500">
+          24H Volume
+        </th>
+        <th class="text-left pt-5 pb-3 text-sm font-normal text-slate-500">
+          Market Cap
+        </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of list; track $index) {
+      <tr class="odd:bg-slate-100">
+        <td class="text-center py-4">
+          <ng-icon
+            size="25"
+            class="text-yellow-400"
+            name="heroStarSolid"
+          ></ng-icon>
+        </td>
+        <td>
+          <div class="flex items-center">
+            <div class="w-10 h-10 bg-{{ item.color }} flex rounded-lg mr-3">
+              <ng-icon
+                class="text-white m-auto"
+                size="20"
+                [name]="item.icon"
+              ></ng-icon>
+            </div>
+            <p class="text-base text-slate-600">
+              {{ item.name }} - {{ item.code }}
+            </p>
+          </div>
+        </td>
+        <td class="text-base text-slate-600">
+          {{ item.price | currency : "$" }}
+        </td>
+        <td>
+          <div class="flex items-center w-fit py-1 px-2 rounded">
+            <ng-icon
+              size="20"
+              class="mr-1.5"
+              [name]="
+                item.graph.type == 'up'
+                  ? 'heroArrowTrendingUpSolid'
+                  : 'heroArrowTrendingDownSolid'
+              "
+              [class]="
+                item.graph.type == 'up' ? 'text-green-500' : 'text-red-500'
+              "
+            ></ng-icon>
+            <span
+              class="text-sm"
+              [class]="
+                item.graph.type == 'up' ? 'text-green-500' : 'text-red-500'
+              "
+            >
+              {{ item.graph.type == "up" ? "+" : "-" }}{{ item.graph.percent }}%
+            </span>
+          </div>
+        </td>
+        <td class="text-base text-slate-600">
+          {{ item.volume | currency : "$" }}M
+        </td>
+        <td class="text-base text-slate-600">
+          {{ item.market_cap | currency : "$" : "symbol" : "1.0-0" }}
+        </td>
+        <td>
+          <button
+            class="py-1 px-4 border border-slate-300 text-sm rounded-lg hover:bg-slate-200 active:bg-slate-300"
+          >
+            Trade
+          </button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

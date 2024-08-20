@@ -1,0 +1,182 @@
+<main>
+  <div class="bg-primary/5 pb-16">
+    <app-header></app-header>
+    <div class="container mx-auto mt-32">
+      <div class="flex items-end">
+        <div class="w-2/3">
+          <div class="bg-primary/10 text-primary w-fit px-3 py-2 rounded-lg">
+            Best platform Cryptocurrency
+          </div>
+          <h1 class="text-7xl my-8">
+            Embrace the Future <br />
+            Currency of Our Time
+          </h1>
+        </div>
+        <div class="w-1/3 mb-2">
+          <app-card-chart
+            [type]="'horizontal'"
+            [crypto]="{
+              icon: 'simpleTether',
+              name: 'Tether',
+              color: 'bg-customGreen',
+              code: 'USDT'
+            }"
+            [graph]="{
+              type: 'down',
+              percent: 180,
+              value: 12715
+            }"
+          ></app-card-chart>
+        </div>
+      </div>
+      <div class="flex">
+        <div class="w-2/5">
+          <p class="text-slate-500 text-xl">
+            Embrace the surge of new digital currencies with flexibility and
+            innovation to navigate the global market's complexitied
+          </p>
+          <div class="flex gap-3 my-8">
+            <div>
+              <button
+                class="bg-primary border border-primary hover:bg-secondary text-white px-6 py-2.5 rounded-lg"
+              >
+                Trade Now
+              </button>
+            </div>
+
+            <button
+              class="bg-white border hover:bg-slate-100 active:bg-slate-200 text-slate-600 px-6 py-2.5 rounded-lg flex items-center"
+            >
+              <span class="block mr-1">Watch Demo</span>
+              <ng-icon size="20" name="hugePlayCircle"></ng-icon>
+            </button>
+          </div>
+          <ul>
+            <li class="flex items-center mb-3">
+              <ng-icon
+                size="25"
+                name="heroCheckCircleSolid"
+                class="mr-1 text-secondary"
+              ></ng-icon>
+              <span class="block mr-1 text-secondary text-lg"
+                >Transactions are secure and encrypted</span
+              >
+            </li>
+            <li class="flex items-center">
+              <ng-icon
+                size="25"
+                name="heroCheckCircleSolid"
+                class="mr-1 text-secondary"
+              ></ng-icon>
+              <span class="block mr-1 text-secondary text-lg"
+                >Solutions for Using Currency Without Banks</span
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="w-3/5 columns-2 gap-5 pl-5">
+          <app-card-portfolio class="w-1/2"></app-card-portfolio>
+          <app-card-chart
+            class="w-1/2"
+            [type]="'vertical'"
+            [crypto]="{
+              icon: 'simpleBitcoinsv',
+              name: 'Bitcoin',
+              color: 'bg-customOrange',
+              code: 'BTC'
+            }"
+            [graph]="{
+              type: 'up',
+              percent: 24,
+              value: 57326
+            }"
+          ></app-card-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-companies></app-companies>
+  <div class="container mx-auto">
+    <h2 class="text-center text-3xl mt-20 mb-14">
+      Exploring Hottest Coin Trend
+    </h2>
+    <app-table-trends></app-table-trends>
+  </div>
+  <div class="bg-gray/10 py-20">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-2 mb-7">
+        <h2 class="text-3xl">Reasons to Choose Cryptocurrency from Us</h2>
+        <p class="text-slate-500 text-lg">
+          Embrace the surge of new digital currencies with flexibility and
+          innovation to navigate the global market's complexitied
+        </p>
+      </div>
+      <div class="grid grid-cols-3 gap-5">
+        <app-card-reason
+          [icon]="'saxCoin1Outline'"
+          [title]="'New Market Opportunities'"
+          [description]="
+            'Access to various types of crypto assets and new markets that are not yet available.'
+          "
+        ></app-card-reason>
+        <app-card-reason
+          [icon]="'saxShieldTickOutline'"
+          [title]="'Security trust are top priority'"
+          [description]="
+            'Building an environtment that is safe, stable and allows for sustainable growth and cooperation.'
+          "
+        ></app-card-reason>
+        <app-card-reason
+          [icon]="'saxDollarCircleOutline'"
+          [title]="'Investment with small capital'"
+          [description]="
+            'Can optimize the use of their limited capital and achieve greater financial goals.'
+          "
+        ></app-card-reason>
+      </div>
+    </div>
+  </div>
+  <div></div>
+
+  <div class="bg-white py-20">
+    <div class="container mx-auto w-full grid grid-cols-2">
+      <div class="bg-gray/10 p-10 rounded-xl">
+        <app-card-order></app-card-order>
+      </div>
+      <div class="self-center ml-14">
+        <h2 class="text-3xl">Advanced Order Types for Enhanced</h2>
+        <p class="text-slate-500 text-lg my-5">
+          Embrace the surge of new digital currencies with flexibility and
+          innovation to navigate the global market's complexitied
+        </p>
+        <button
+          class="bg-primary border border-primary hover:bg-secondary text-white px-6 py-2.5 rounded-lg"
+        >
+          Explore More
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="bg-white py-20">
+    <div class="container mx-auto w-full grid grid-cols-2">
+      <div class="self-center mr-14">
+        <h2 class="text-3xl">
+          Technical Chart to Predict Cryptocurrency Movements
+        </h2>
+        <p class="text-slate-500 text-lg my-5">
+          Accurate price predictions with in-depth chart analysis. Comprehensive
+          technical charts reveal hidden patterns, identify trends, and
+          anticipate price changes.
+        </p>
+        <button
+          class="bg-primary border border-primary hover:bg-secondary text-white px-6 py-2.5 rounded-lg"
+        >
+          Explore More
+        </button>
+      </div>
+      <div class="bg-gray/10 p-10 rounded-xl">
+        <app-card-movement></app-card-movement>
+      </div>
+    </div>
+  </div>
+</main>
