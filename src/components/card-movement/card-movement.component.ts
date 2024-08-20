@@ -36,7 +36,6 @@ export class CardMovementComponent {
   public chartOptions!: ChartOptions;
 
   active = signal('1D');
-
   data = [100, 140, 85, 90, 150, 95, 100, 130, 91]
 
   constructor() {

@@ -23,13 +23,12 @@ export type PortfolioList = {
   imports: [NgIconComponent, CommonModule],
 })
 export class CardPortfolioComponent {
-
   list: PortfolioList[] = [
     {
       icon: 'simpleEthereum',
       code: 'ETH',
       name: 'Ethereum',
-      color: 'customBlue',
+      color: '#0659ff',
       graph: {
         type: 'up',
         percent: 24
@@ -41,7 +40,7 @@ export class CardPortfolioComponent {
       icon: 'simpleTether',
       code: 'USDT',
       name: 'Tether',
-      color: 'customGreen',
+      color: '#51ad94',
       graph: {
         type: 'up',
         percent: 10
@@ -53,7 +52,7 @@ export class CardPortfolioComponent {
       icon: 'simpleBitcoinsv',
       code: 'BTC',
       name: 'Bitcoin',
-      color: 'customOrange',
+      color: '#f7931a',
       graph: {
         type: 'down',
         percent: 12
@@ -65,7 +64,7 @@ export class CardPortfolioComponent {
       icon: 'simplePolygon',
       code: 'MATIC',
       name: 'Polygon',
-      color: 'customPurple',
+      color: '#863ff8',
       graph: {
         type: 'up',
         percent: 30

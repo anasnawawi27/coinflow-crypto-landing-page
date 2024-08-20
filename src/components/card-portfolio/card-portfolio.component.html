@@ -15,7 +15,10 @@
     @for (item of list; track $index) {
     <li class="flex justify-between items-center py-3 first:pt-0 last:pb-0">
       <div class="flex items-center">
-        <div class="w-10 h-10 bg-{{ item.color }} flex rounded-lg mr-3">
+        <div
+          class="w-10 h-10 flex rounded-lg mr-3"
+          [ngStyle]="{ background: item.color }"
+        >
           <ng-icon
             class="text-white m-auto"
             size="20"

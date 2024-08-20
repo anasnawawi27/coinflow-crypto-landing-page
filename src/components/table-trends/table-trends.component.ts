@@ -23,10 +23,9 @@ export type CryptoList = {
   imports: [NgIconComponent, CommonModule],
 })
 export class TableTrendsComponent {
-
   list: CryptoList[] = [
     {
-      color: 'customOrange',
+      color: '#f7931a',
       icon: 'simpleBitcoinsv',
       name: 'Bitcoin',
       code: 'BTC',
@@ -39,7 +38,7 @@ export class TableTrendsComponent {
       market_cap: 418964878
     },
     {
-      color: 'customBlue',
+      color: '#0659ff',
       icon: 'simpleEthereum',
       name: 'Ethereum',
       code: 'ETH',
@@ -52,7 +51,7 @@ export class TableTrendsComponent {
       market_cap: 319964192
     },
     {
-      color: 'customGreen',
+      color: '#51ad94',
       icon: 'simpleTether',
       name: 'Tether',
       code: 'USDT',
@@ -65,7 +64,7 @@ export class TableTrendsComponent {
       market_cap: 124914109
     },
     {
-      color: 'customYellow',
+      color: '#f1b90a',
       icon: 'simpleBnbchain',
       name: 'BNB',
       code: 'BNB',
@@ -78,7 +77,7 @@ export class TableTrendsComponent {
       market_cap: 209877124
     },
     {
-      color: 'customPurple',
+      color: '#863ff8',
       icon: 'simplePolygon',
       name: 'Polygon',
       code: 'MATIC',
@@ -91,7 +90,7 @@ export class TableTrendsComponent {
       market_cap: 198184576
     },
     {
-      color: 'customBlue',
+      color: '#0659ff',
       icon: 'simpleSolana',
       name: 'Solana',
       code: 'SOL',
