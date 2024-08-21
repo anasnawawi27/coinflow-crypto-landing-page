@@ -1,0 +1,26 @@
+<div class="bg-white flex gap-5 p-5 rounded-xl">
+  <img
+    class="w-40 h-40 rounded-lg object-cover"
+    [src]="imagePath()"
+    alt="image 1"
+  />
+
+  <div class="flex w-3/4 flex-col justify-between">
+    <div>
+      <small class="text-slate-500">{{ category() }}</small>
+      <p class="mt-2 text-xl">
+        {{ title() }}
+      </p>
+    </div>
+
+    <button
+      class="flex items-center self-start py-2 px-4 hover:bg-slate-100 active:bg-slate-200 rounded-lg"
+    >
+      <span class="text-slate-600">Read More</span>
+      <ng-icon
+        name="lucideCircleChevronRight"
+        class="ml-1.5 text-slate-600"
+      ></ng-icon>
+    </button>
+  </div>
+</div>
