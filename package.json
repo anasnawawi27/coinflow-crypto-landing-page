@@ -26,8 +26,11 @@
     "@ng-icons/phosphor-icons": "^29.5.0",
     "@ng-icons/remixicon": "^29.5.0",
     "@ng-icons/simple-icons": "^29.4.0",
+    "@popperjs/core": "^2.11.8",
+    "@preline/dropdown": "^2.4.1",
     "apexcharts": "^3.52.0",
     "ng-apexcharts": "^1.11.0",
+    "preline": "^2.4.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
