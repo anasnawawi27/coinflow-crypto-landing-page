@@ -273,4 +273,87 @@
       </button>
     </div>
   </div>
+  <div class="container mx-auto flex justify-between mb-8">
+    <div class="flex items-center">
+      <img
+        class="mr-3 w-50 h-50"
+        src="assets/images/logo-secondary.svg"
+        alt="logo secondary"
+      />
+      <span class="text-2xl">Coinflow</span>
+    </div>
+    <div class="grid grid-cols-3 gap-4">
+      <button
+        class="w-10 h-10 border text-slate-600 bg-white flex rounded-full hover:bg-slate-100 active:bg-slate-200"
+      >
+        <ng-icon size="20" class="m-auto" name="remixInstagramFill"></ng-icon>
+      </button>
+      <button
+        class="w-10 h-10 border text-slate-600 bg-white flex rounded-full hover:bg-slate-100 active:bg-slate-200"
+      >
+        <ng-icon size="20" class="m-auto" name="remixTwitterFill"></ng-icon>
+      </button>
+      <button
+        class="w-10 h-10 border text-slate-600 bg-white flex rounded-full hover:bg-slate-100 active:bg-slate-200"
+      >
+        <ng-icon size="20" class="m-auto" name="remixFacebookBoxFill"></ng-icon>
+      </button>
+    </div>
+  </div>
+  <div
+    class="container mx-auto grid grid-cols-4 border-b border-slate-300 pb-10 mb-8"
+  >
+    @for (footer of footers; track $index) {
+    <div>
+      <h6 class="text-lg mb-4 text-slate-700">{{ footer.title }}</h6>
+      <ul>
+        @for (list of footer.list; track $index) {
+        <li class="my-2">
+          <a
+            [routerLink]="list.link"
+            href="javascript:void(0)"
+            class="text-slate-500"
+            >{{ list.label }}</a
+          >
+        </li>
+        }
+      </ul>
+    </div>
+    }
+  </div>
+  <div class="container mx-auto flex justify-between mb-8">
+    <span class="text-slate-400"
+      >&copy; UI Design By
+      <a
+        target="_blank"
+        class="underline"
+        href="https://dribbble.com/shots/24161085-CoinFlow-Cryptocurrency-Landing-Page"
+        >Dipa UI/UX</a
+      >
+      &nbsp; | &nbsp; Code with ❤️ By :
+      <a
+        target="_blank"
+        class="underline"
+        href="https://www.linkedin.com/in/anas-nawawi/"
+        >Anas Nawawi</a
+      >
+    </span>
+    <div class="grid grid-cols-3 gap-4">
+      <button
+        class="w-10 h-10 border text-slate-600 bg-white flex rounded-full hover:bg-slate-100 active:bg-slate-200"
+      >
+        <ng-icon size="20" class="m-auto" name="remixInstagramFill"></ng-icon>
+      </button>
+      <button
+        class="w-10 h-10 border text-slate-600 bg-white flex rounded-full hover:bg-slate-100 active:bg-slate-200"
+      >
+        <ng-icon size="20" class="m-auto" name="remixTwitterFill"></ng-icon>
+      </button>
+      <button
+        class="w-10 h-10 border text-slate-600 bg-white flex rounded-full hover:bg-slate-100 active:bg-slate-200"
+      >
+        <ng-icon size="20" class="m-auto" name="remixFacebookBoxFill"></ng-icon>
+      </button>
+    </div>
+  </div>
 </main>
